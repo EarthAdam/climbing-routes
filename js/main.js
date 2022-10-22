@@ -7,13 +7,13 @@ function numberWithCommas(x) {
 
 var map = new mapboxgl.Map({
     container: 'map',
-    //style: 'mapbox://styles/earthadam/cjvy2aoum109m1ct7j4cce74d',
+    style: 'mapbox://styles/mapbox/satellite-streets-v11',
     //style: 'mapbox://styles/earthadam/cjggo2pka002c2so00qaetnaz',	//Website
-    style: 'mapbox://styles/earthadam/cjxo0sdri31o01clrrw3qesbq',	//Presentation
+    //style: 'mapbox satellite-streets-v11',	//Presentation
     //style: 'mapbox://styles/earthadam/cjggwweef00002rpuoj1t93h3',	//Desert
     //style: 'mapbox://styles/earthadam/cjs968jaf2e1j1fmp6hj0pwwn',
-    center: [-105,40],
-    zoom: 7
+    center: [-105.35,40],
+    zoom: 12
 });
 
 var icon = "circle";

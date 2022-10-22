@@ -41,7 +41,7 @@ map.on('load', function() {
     map.addSource('9s', { type: 'geojson', data: 'https://raw.githubusercontent.com/ohioadam/climbing-routes/master/9s.geojson' });
     // Add a layer showing the places.
     map.addLayer({
-        "id": "sites",
+        "id": "7s",
         "type": "circle",
         source: "7s",
         'paint': {
@@ -54,7 +54,7 @@ map.on('load', function() {
         }
     });
     map.addLayer({
-        "id": "sites",
+        "id": "8s",
         "type": "circle",
         source: "8s",
         'paint': {
@@ -67,7 +67,7 @@ map.on('load', function() {
         }
     });
     map.addLayer({
-        "id": "sites",
+        "id": "9s",
         "type": "circle",
         source: "9s",
         'paint': {

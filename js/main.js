@@ -12,14 +12,14 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/earthadam/cjxo0sdri31o01clrrw3qesbq',	//Presentation
     //style: 'mapbox://styles/earthadam/cjggwweef00002rpuoj1t93h3',	//Desert
     //style: 'mapbox://styles/earthadam/cjs968jaf2e1j1fmp6hj0pwwn',
-    center: [40,-113],
+    center: [-105,40],
     zoom: 7
 });
 
 var icon = "circle";
 
 map.on('load', function() {
-    var layers = ['Retired','Active', 'Future'];
+    var layers = ['7s','8s', '9s'];
     var colors = ['#39DFff','#00FF00', '#FFFF00'];
     for (i = 0; i < layers.length; i++) {
         var layer = layers[i];
@@ -50,43 +50,33 @@ map.on('load', function() {
                 'base': 20,
                 'stops': [[12, 5], [22, 180]]
             },
-            // color circles by project status, using a match expression
-            // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-            'circle-color': [
-                'match',
-                ['get', 'Map Color'],
-                'G', '#00ff00',
-                'Y', '#ffff00',
-                'B', '#39DFff',
-                /* other */ '#fff'
-            ],
-            'circle-stroke-color': [
-                'match',
-                ['get', 'Map Color'],
-                'G', '#004400',
-                'Y', '#444400',
-                'B', '#00497A',
-                /* other */ '#444'
-            ],
-            'circle-opacity':[
-                'match',
-                ['get', 'Map Color'],
-                'G', 1,
-                'Y', 1,
-                'B', 1,
-                'D', 0,
-                /* other */ 1
-            ],
-            'circle-stroke-opacity':[
-                'match',
-                ['get', 'Map Color'],
-                'G', 1,
-                'Y', 1,
-                'B', 1,
-                'D', 0,
-                /* other */ 1
-            ],
-            'circle-stroke-width':1
+            'circle-color': '#39DFff'
+        }
+    });
+    map.addLayer({
+        "id": "sites",
+        "type": "circle",
+        source: "8s",
+        'paint': {
+            // make circles larger as the user zooms from z12 to z22
+            'circle-radius': {
+                'base': 20,
+                'stops': [[12, 5], [22, 180]]
+            },
+            'circle-color': '#00FF00'
+        }
+    });
+    map.addLayer({
+        "id": "sites",
+        "type": "circle",
+        source: "9s",
+        'paint': {
+            // make circles larger as the user zooms from z12 to z22
+            'circle-radius': {
+                'base': 20,
+                'stops': [[12, 5], [22, 180]]
+            },
+            'circle-color': '#FFFF00'
         }
     });
     // Create a popup, but don't add it to the map yet.

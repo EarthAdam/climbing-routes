@@ -3,10 +3,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZWFydGhhZGFtIiwiYSI6ImNqd3Y3amlwczBnMzc0YW4xc
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/satellite-streets-v11',
-    //style: 'mapbox://styles/earthadam/cjggo2pka002c2so00qaetnaz',	//Website
-    //style: 'mapbox satellite-streets-v11',	//Presentation
-    //style: 'mapbox://styles/earthadam/cjggwweef00002rpuoj1t93h3',	//Desert
-    //style: 'mapbox://styles/earthadam/cjs968jaf2e1j1fmp6hj0pwwn',
     center: [-105.35,40],
     zoom: 12
 });
@@ -14,11 +10,9 @@ var map = new mapboxgl.Map({
 var icon = "circle";
 
 map.on('load', function() {
-    var layers = ['7s','8s', '9s'];
-    var colors = ['#39DFff','#00FF00', '#FFFF00'];
-    map.addSource('7s', { type: 'geojson', data: 'https://github.com/OhioAdam/climbing-routes/raw/main/7s.geojson' });
-    map.addSource('8s', { type: 'geojson', data: 'https://github.com/OhioAdam/climbing-routes/blob/main/8s.geojson' });
-    map.addSource('9s', { type: 'geojson', data: 'https://github.com/OhioAdam/climbing-routes/blob/main/9s.geojson' });
+    map.addSource('7s', { type: 'geojson', data: 'https://raw.githubusercontent.com/OhioAdam/climbing-routes/main/7s.geojson' });
+    map.addSource('8s', { type: 'geojson', data: 'https://raw.githubusercontent.com/OhioAdam/climbing-routes/main/8s.geojson' });
+    map.addSource('9s', { type: 'geojson', data: 'https://raw.githubusercontent.com/OhioAdam/climbing-routes/main/9s.geojson' });
     // Add a layer showing the places.
     map.addLayer({
         "id": "7s",
@@ -58,18 +52,6 @@ map.on('load', function() {
             },
             'circle-color': '#FFFF00'
         }
-    });
-    // Create a popup, but don't add it to the map yet.
-    var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
-    });
-
-  
-
-    map.on('click', function() {
-        map.getCanvas().style.cursor = '';
-        popup.remove();
     });
     
 });

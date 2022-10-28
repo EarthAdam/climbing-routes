@@ -91,7 +91,7 @@ map.on('click', 'easies', (e) => {
     const coordinates = e.features[0].geometry.coordinates.slice();
     const title = e.features[0].properties[0];
     const rating = e.features[0].properties[1];
-    const approach = e.features[0].properties.description;
+    const approach = e.features[0].properties[4].description;
     
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
@@ -105,7 +105,7 @@ map.on('click', 'easies', (e) => {
     .setHTML(
         "<h2>"+ title+"</h2>"+
         "<h3>"+ rating+"</h3>"+
-        "<b>Country:</b> "+approach)
+        "<b>Approach:</b> "+approach)
     .addTo(map);
 });
 map.on('click', 'mediums', (e) => {
@@ -113,7 +113,7 @@ map.on('click', 'mediums', (e) => {
     const coordinates = e.features[0].geometry.coordinates.slice();
     const title = e.features[0].properties[0];
     const rating = e.features[0].properties[1];
-    const approach = e.features[0].properties.description;
+    const approach = e.features[0].properties[4].description;
     
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
@@ -127,7 +127,7 @@ map.on('click', 'mediums', (e) => {
     .setHTML(
         "<h2>"+ title+"</h2>"+
         "<h3>"+ rating+"</h3>"+
-        "<b>Country:</b> "+approach)
+        "<b>Approach:</b> "+approach)
     .addTo(map);
 });
 map.on('click', 'hards', (e) => {
@@ -135,7 +135,7 @@ map.on('click', 'hards', (e) => {
     const coordinates = e.features[0].geometry.coordinates.slice();
     const title = e.features[0].properties[0];
     const rating = e.features[0].properties[1];
-    const approach = e.features[0].properties.description;
+    const approach = e.features[0].properties[4].description;
     
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
@@ -149,7 +149,7 @@ map.on('click', 'hards', (e) => {
     .setHTML(
         "<h2>"+ title+"</h2>"+
         "<h3>"+ rating+"</h3>"+
-        "<b>Country:</b> "+approach)
+        "<b>Approach:</b> "+approach)
     .addTo(map);
 });
 </script>

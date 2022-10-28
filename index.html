@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Load data from an external GeoJSON file</title>
+<title>Climbing Routes near central CO</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
@@ -19,9 +19,9 @@ body { margin: 0; padding: 0; }
 const map = new mapboxgl.Map({
 container: 'map', // container ID
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-style: 'mapbox://styles/mapbox/satellite-v9', // style URL
-zoom: 2, // starting zoom
-center: [108, 4], // // starting center in [lng, lat]
+style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+zoom: 12, // starting zoom
+center: [-105.35,40], // // starting center in [lng, lat]
 projection: 'globe' // display map as a 3D globe
 });
  

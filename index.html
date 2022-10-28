@@ -52,13 +52,13 @@ map.on('load', () => {
         data: './9s.geojson'
     });
     map.addLayer({
-        'id': 'easies',
+        'id': 'hards',
         'type': 'circle',
-        'source': 'sevens',
+        'source': 'nines',
         'paint': {
             'circle-radius': 4,
-            'circle-stroke-width': 2,
-            'circle-color': 'green',
+            'circle-stroke-width': 1,
+            'circle-color': 'red',
             'circle-stroke-color': 'white'
         }
     });
@@ -68,30 +68,30 @@ map.on('load', () => {
         'source': 'eights',
         'paint': {
             'circle-radius': 4,
-            'circle-stroke-width': 2,
+            'circle-stroke-width': 1,
             'circle-color': 'yellow',
             'circle-stroke-color': 'white'
         }
     });
     map.addLayer({
-        'id': 'hards',
+        'id': 'easies',
         'type': 'circle',
-        'source': 'nines',
+        'source': 'sevens',
         'paint': {
             'circle-radius': 4,
-            'circle-stroke-width': 2,
-            'circle-color': 'red',
+            'circle-stroke-width': 1,
+            'circle-color': 'green',
             'circle-stroke-color': 'white'
         }
     });
 });
 
-map.on('click', 'easies', (e) => {
+map.on('click', 'hards', (e) => {
 // Copy coordinates array.
     const coordinates = e.features[0].geometry.coordinates.slice();
     const title = e.features[0].properties[0];
     const rating = e.features[0].properties[1];
-    const approach = e.features[0].properties[4].description;
+    const approach = e.features[0].properties[4]['description'];
     
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
@@ -130,12 +130,12 @@ map.on('click', 'mediums', (e) => {
         "<b>Approach:</b> "+approach)
     .addTo(map);
 });
-map.on('click', 'hards', (e) => {
+map.on('click', 'easies', (e) => {
 // Copy coordinates array.
     const coordinates = e.features[0].geometry.coordinates.slice();
     const title = e.features[0].properties[0];
     const rating = e.features[0].properties[1];
-    const approach = e.features[0].properties[4]['description'];
+    const approach = e.features[0].properties[4][5];
     
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears

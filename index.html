@@ -89,7 +89,9 @@ map.on('load', () => {
 map.on('click', 'easies', (e) => {
 // Copy coordinates array.
     const coordinates = e.features[0].geometry.coordinates.slice();
-    const description = e.features[0].properties[0];
+    const title = e.features[0].properties[0];
+    const rating = e.features[0].properties[1];
+    const approach = e.features[0].properties.description;
     
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
@@ -100,13 +102,18 @@ map.on('click', 'easies', (e) => {
     
     new mapboxgl.Popup()
     .setLngLat(coordinates)
-    .setHTML(description)
+    .setHTML(
+        "<h2>"+ title+"</h2>"+
+        "<h3>"+ rating+"</h3>"+
+        "<b>Country:</b> "+approach)
     .addTo(map);
 });
 map.on('click', 'mediums', (e) => {
 // Copy coordinates array.
     const coordinates = e.features[0].geometry.coordinates.slice();
-    const description = e.features[0].properties[0];
+    const title = e.features[0].properties[0];
+    const rating = e.features[0].properties[1];
+    const approach = e.features[0].properties.description;
     
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
@@ -117,13 +124,18 @@ map.on('click', 'mediums', (e) => {
     
     new mapboxgl.Popup()
     .setLngLat(coordinates)
-    .setHTML(description)
+    .setHTML(
+        "<h2>"+ title+"</h2>"+
+        "<h3>"+ rating+"</h3>"+
+        "<b>Country:</b> "+approach)
     .addTo(map);
 });
 map.on('click', 'hards', (e) => {
 // Copy coordinates array.
     const coordinates = e.features[0].geometry.coordinates.slice();
-    const description = e.features[0].properties[0];
+    const title = e.features[0].properties[0];
+    const rating = e.features[0].properties[1];
+    const approach = e.features[0].properties.description;
     
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
@@ -134,7 +146,10 @@ map.on('click', 'hards', (e) => {
     
     new mapboxgl.Popup()
     .setLngLat(coordinates)
-    .setHTML(description)
+    .setHTML(
+        "<h2>"+ title+"</h2>"+
+        "<h3>"+ rating+"</h3>"+
+        "<b>Country:</b> "+approach)
     .addTo(map);
 });
 </script>

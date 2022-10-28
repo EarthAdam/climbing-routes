@@ -135,7 +135,7 @@ map.on('click', 'hards', (e) => {
     const coordinates = e.features[0].geometry.coordinates.slice();
     const title = e.features[0].properties[0];
     const rating = e.features[0].properties[1];
-    const approach = e.features[0].properties[4].description;
+    const approach = e.features[0].properties[4];
     
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears

@@ -33,20 +33,20 @@ map.on('load', () => {
     map.addSource('sevens', {
         type: 'geojson',
         // Use a URL for the value for the `data` property.
-        data: 'https://github.com/OhioAdam/climbing-routes/blob/main/7s.geojson'
+        data: './7s.geojson'
     });
     map.addSource('eights', {
         type: 'geojson',
         // Use a URL for the value for the `data` property.
-        data: 'https://github.com/OhioAdam/climbing-routes/blob/main/8s.geojson'
+        data: './8s.geojson'
     });
     map.addSource('nines', {
         type: 'geojson',
         // Use a URL for the value for the `data` property.
-        data: 'https://github.com/OhioAdam/climbing-routes/blob/main/9s.geojson'
+        data: './9s.geojson'
     });
     map.addLayer({
-        'id': 'earthquakes-layer',
+        'id': 'easies',
         'type': 'circle',
         'source': 'sevens',
         'paint': {
@@ -57,7 +57,7 @@ map.on('load', () => {
         }
     });
     map.addLayer({
-        'id': 'earthquakes-layer',
+        'id': 'mediums',
         'type': 'circle',
         'source': 'eights',
         'paint': {
@@ -68,7 +68,7 @@ map.on('load', () => {
         }
     });
     map.addLayer({
-        'id': 'earthquakes-layer',
+        'id': 'hards',
         'type': 'circle',
         'source': 'nines',
         'paint': {
